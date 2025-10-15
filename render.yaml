@@ -1,7 +1,14 @@
 services:
-  - type: web
+  - type: worker
     name: ClickOfertasBot
     env: python
+    plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python bot.py"
     autoDeploy: true
+    envVars:
+      - key: BOT_TOKEN
+        value: "7631672822:AAEsGUxW9_Bt6TpjJRWlUEFqCei1ovqwSVw"
+      - key: CHANNEL_ID
+        value: "-1002925417422"
+      # 🆕 REMOVIDO: DELAY_SEGUNDOS - agora é controlado pelo código
